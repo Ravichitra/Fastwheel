@@ -1,0 +1,7 @@
+com\fastwheel\frontend\LoginController.class
+com\fastwheel\frontend\CategoryController.class
+com\fastwheel\frontend\CartController.class
+com\fastwheel\frontend\ProductController.class
+com\fastwheel\frontend\AddressController.class
+com\fastwheel\frontend\HomeController.class
+com\fastwheel\frontend\OrderController.class
