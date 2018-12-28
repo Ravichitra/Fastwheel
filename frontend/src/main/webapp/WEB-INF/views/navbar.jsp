@@ -18,12 +18,14 @@
 </style>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-header">
-		<img src="resources/images/logo.PNG" alt="fastwheel" height="80px"></img>
+<div class="navbar-header">
+		<img src="${contextRoot}/resources/images/logo.PNG" alt="fastwheel" height="80px"></img>
 	</div>
+	
 	<c:choose>
 
 		<c:when test="${sessionScope.userlogin==true}">
+		
 			<ul class="nav navbar-nav">
 				<li class="nav-item "><a href="${contextRoot}/index"><font
 						color="black">Home</font></a></li>
@@ -35,25 +37,24 @@
 						color="black">Viewallproduct</font></a></li>
 				<li class="nav-item "><a href="${contextRoot}/user/viewCart"><font
 						color="black">cart</font></a></li>
-				<li class="nav-item "><a href="${contextRoot}/logout"><font
-						color="black">Logout</font></a></li>
 						<li class="nav-item "><a href="${contextRoot}/user/viewOrders"><font
 						color="black">Orders</font></a></li>
 						
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href=""><span class="glyphicon glyphicon-user"></span>Welcome!! ${sessionScope.username}</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-user"></span><font color:"black">Welcome!! ${sessionScope.username}</font></a></li>
 						<li><a href="${contextRoot}/user/viewCart"><span class="glyphicon">&#xe116;</span></a></li>
-						<li><a href="${contextRoot}/user/viewOrders"><span class="glyphicon glyphicon-list-alt"></span>
-								ViewOrders </a></li>
+						<li><a href="${contextRoot}/user/viewOrders">
+								<font color:"black">ViewOrders</font> </a></li>
 
-						<li><a href="${contextroot}/logout"><span class="glyphicon glyphicon-log-out"></span>
-								Logout </a></li>
+						<li><a href="${contextRoot}/logout"><span class="glyphicon glyphicon-log-out"></span>
+								<font color:"black">Logout </font></a></li>
 					</ul>
 					
 		</c:when>
 
 		<c:when test="${sessionScope.userlogin==false}">
+		
 			<ul class="nav navbar-nav">
 				<li class="nav-item "><a href="${contextRoot}/index"><font
 						color="black">Home</font></a></li>
@@ -80,6 +81,7 @@
 		</c:when>
 
 		<c:otherwise>
+		
 			<ul class="nav navbar-nav">
 				<li class="nav-item "><a href="${contextRoot}/index"><font
 						color="black">Home</font></a></li>

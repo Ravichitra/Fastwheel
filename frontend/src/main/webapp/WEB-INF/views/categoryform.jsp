@@ -2,13 +2,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="CR" value="${pageContext.request.contextPath}/resources/pimages" />
 <c:set var="cr2" value="${pageContext.request.contextPath}/admin"/>
-<style>
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-<script
-	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#myTable').DataTable({
@@ -582,10 +578,10 @@ important
 
 <div class="container">
 <c:if test="${editmode}">
-<c:set var="url" value="${contextRoot}/admin/updatecategory"></c:set>
+<c:set var="url" value="${cr2}/updatecategory"></c:set>
 </c:if>
 <c:if test="${!editmode}">
-<c:set var="url" value="${contextRoot}/admin/CreateCategory"></c:set>
+<c:set var="url" value="${cr2}/CreateCategory"></c:set>
 </c:if>
 	<c:if test="${haserror}">
 		<div error="alert alert-danger alert-dismissable">${error}</div>
@@ -662,10 +658,10 @@ important
 									<td>${c.category_Name}</td>
 									<td>${c.categoryDesc}</td>
 									<td class="td-actions text-right"><a
-										href="${contextRoot}/admin/editcategory?catname=${c.category_Name}" rel="tooltip"
+										href="${cr2}/editcategory?catname=${c.category_Name}" rel="tooltip"
 										class="btn btn-success btn-link btn-just-icon btn-sm"
 										data-original-title="" title=""> <i class="material-icons">edit</i>
-									</a> <a href="${contextRoot}/admin/deletecategory?catname=${c.category_Name}"
+									</a> <a href="${cr2}/deletecategory?catname=${c.category_Name}"
 										rel="tooltip"
 										class="btn btn-danger btn-link btn-just-icon btn-sm"
 										data-original-title="" title=""> <i class="material-icons">close</i>

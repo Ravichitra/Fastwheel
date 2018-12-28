@@ -10,6 +10,12 @@ padding-top:10%;
 </style>
 
 <div class="container">
+<c:if test="${haserror}">
+<div class="alert alert-danger">
+<strong>${error}</strong>
+</div>
+
+</c:if>
   <h2>Register Form</h2>
   <form:form modelAttribute="myuser" class="form-horizontal" action="adduser" method="post">
     <div class="form-group">
@@ -40,7 +46,7 @@ padding-top:10%;
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">PASSWORD:</label>
       <div class="col-sm-10">          
-        <form:input type="email" class="form-control" id="email" placeholder="Enter password"  path="user_Password"  />
+        <form:input type="password" class="form-control" id="email" placeholder="Enter password"  path="user_Password"  />
         <form:errors path="user_Password" cssStyle="color:red"></form:errors>
         
       </div>

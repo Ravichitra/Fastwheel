@@ -1,14 +1,12 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="CR" value="${pageContext.request.contextPath}/resources/pimages" />
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <c:set var="cr2" value="${pageContext.request.contextPath}/admin"/>
-<style>
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-<script
-	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#myTable').DataTable({
@@ -700,7 +698,7 @@ important
 									<td>${c.price}</td>
 									<td>${c.quantity}</td>
 									<td>${c.category.category_Name}</td>
-									<td><img src="$(CR)/$(c.product_id).jpg" width="100" height="100"/></td>
+									<td><img src="${contextRoot}/resources/productimages/${c.product_id}.jpg" width="50" height="50"></td>
 									<td class="td-actions text-right"><a
 										href="${cr2}/editproduct?product_Name=${c.product_Name}" rel="tooltip"
 										class="btn btn-success btn-link btn-just-icon btn-sm"

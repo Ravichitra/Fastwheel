@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+
+
   <title>loginform</title>
   
   <style>
@@ -11,18 +13,17 @@ padding-top:110px;
 }
 </style>
 
-</head>
-<body>
+
+
 
 
 <div class="container">
   <h2>login form</h2>
- <c:if test="${error}}">
-		<div class="alert alert-danger">
-			<strong>Please Enter your username and password</strong>
-		</div>
-	
-	</c:if>
+ <c:if test="${haserror}">
+<div class="alert alert-danger">
+<strong>${error}</strong>
+</div>
+</c:if>
   <form class="form-horizontal" action="performlogin" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
@@ -51,5 +52,4 @@ padding-top:110px;
   </form>
 </div>
 
-</body>
-</html>
+

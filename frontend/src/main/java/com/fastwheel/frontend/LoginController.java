@@ -39,8 +39,10 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String loginpage(Model m)
 	{
-		m.addAttribute("error", false);
-		m.addAttribute("loginpage", true);
+		
+		m.addAttribute("loginpage",true);
+		m.addAttribute("haserror", false);
+		m.addAttribute("error", "");
 		m.addAttribute("title", "fastwheel-Login");
 		return "index";
 
@@ -89,8 +91,9 @@ public class LoginController {
 
 	@RequestMapping("/flogin")
 	public String errorloginpage(Model m) {
-		m.addAttribute("error", true);
+		m.addAttribute("haserror", true);
 		m.addAttribute("loginpage", true);
+		m.addAttribute("error", "Username & password incorrect");
 		m.addAttribute("title", "fastwheel-Login");
 		return "index";
 	}
@@ -107,14 +110,15 @@ public class LoginController {
 			M.addAttribute("myuser", myuser);
 			M.addAttribute("haserror", true);
 			M.addAttribute("error", "Plese check your data");
-			return "redirect:/login";
+			return "index";
 
 		} else {
+			
 
 			try {
 				System.out.println("im in try block");
 				userdao.CreateUserDetails(myuser);
-				return "redirect:/register";
+				return "redirect:/login";
 
 			}
 

@@ -1,9 +1,11 @@
 package com.fastwheel.fastwheelbackend.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.GeneratorType;
 
@@ -14,11 +16,23 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int addressid;
+	@Column(nullable=false)
+	@NotBlank(message = "Name is mandatory")
 	String name;
+	@Column(nullable=false)
+	@NotBlank(message = "Address line is mandatory")
 	String addline1;
+	@Column(nullable=false)
+	@NotBlank(message = "Address line is mandatory")
 	String addline2;
+	@Column(nullable=false)
+	@NotBlank(message = "Address line is mandatory")
     String city;
+	@Column(nullable=false)
+	@NotBlank(message = "Address line is mandatory")
     String state;
+	@Column(nullable=false)
+	@NotBlank(message = "Address line is mandatory")
     String pincode;
 	public int getCartid() {
 		return cartid;

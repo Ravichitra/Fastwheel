@@ -4,6 +4,7 @@ package com.fastwheel.fastwheelbackend.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class UserCred {
@@ -11,6 +12,7 @@ public class UserCred {
 	String emailid;
 
 	@Column(nullable = false)
+	
 	String user_password;
 
 	@Column(nullable = false)

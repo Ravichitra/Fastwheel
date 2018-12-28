@@ -20,7 +20,7 @@
       <img src="resources/images/project3.jpg" alt="cycle1">
     </div>
     <div class="item">
-      <img src="resources/images/project1.jpg" alt="cycle1">
+      <img src="resources/images/carousel last.jpg" alt="cycle1">
     </div>
   </div>
 
